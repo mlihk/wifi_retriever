@@ -8,3 +8,5 @@ You shall generate an APP password from google under your account, and paste tha
 and it should work.
 
 Feel free to modify it for further purpose!
+
+Also saves the password into a local txt document.
