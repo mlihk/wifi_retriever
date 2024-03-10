@@ -96,14 +96,15 @@ def save_password_to_txt(subject, body):
         file.write(new_content)
         file.close()
 
-def generate_qr_code(text):
+def generate_qr_code(ssid, password):
+    wifi_data = f"WIFI:T:WPA;S:{ssid};P:{password};;"
     qr = qrcode.QRCode(
         version=1,
         error_correction=qrcode.constants.ERROR_CORRECT_L,
         box_size=10,
         border=4,
     )
-    qr.add_data(text)
+    qr.add_data(wifi_data)
     qr.make(fit=True)
 
     qr_img = qr.make_image(fill_color="black", back_color="white")
@@ -164,7 +165,7 @@ def main():
 
 
             generate_button = tk.Button(root, text=current_language.translations["generate_qrcode_text"],
-                                        command=lambda: generate_qr_code(password),
+                                        command=lambda: generate_qr_code(current_ssid, password),
                                         font=("Helvetica", 12), bg="orange",
                                         fg="white")
             generate_button.grid(row=2, column=0, columnspan=2, pady=10)
