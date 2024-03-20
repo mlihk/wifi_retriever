@@ -10,3 +10,8 @@ and it should work.
 Feel free to modify it for further purpose!
 
 Also saves the password into a local txt document.
+
+
+Known issues: (updated on 20/03/2024)
+-Email credentials to login fails the check
+
